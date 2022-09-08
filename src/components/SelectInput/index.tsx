@@ -2,7 +2,6 @@ import React from "react";
 
 import { Container } from "./styles";
 
-
 interface ISelectInputProps {
   options: {
     value: string | number;
@@ -15,7 +14,9 @@ const SelectInput: React.FC<ISelectInputProps> = ({ options }) => {
     <Container>
       <select>
         {options.map((option) => (
-          <option value={option.value}>{option.label}</option>
+          <option key={option.value} value={option.value}>
+            {option.label}
+          </option>
         ))}
       </select>
     </Container>
